@@ -16,14 +16,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link links mx-4" aria-current="page" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link links mx-4" aria-current="page" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link links mx-4" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link links mx-4" href="documentation.html">Documentation</a></li>
-                    <li class="nav-item"><a class="nav-link links mx-4" href="faq.html">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link links mx-4" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link links mx-4" href="documentation">Documentation</a></li>
+                    <li class="nav-item"><a class="nav-link links mx-4" href="#">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link links mx-4" href="#">Contact Us</a></li>
                 </ul>
             </div>
-            <button type="button" class="btn button rounded-pill ms-lg-3">Verify</button>
+            <a href="login.html"><button id="login-button" type="button" class="btn button rounded-pill ms-lg-3">Login</button></a>
         </div>
     </nav>
     <div class="head-container">
@@ -38,14 +38,9 @@
       <div class="test-sign">Test Your Signature</div>
       <form id="signatureForm" enctype="multipart/form-data" class="sign-box-wrap d-flex align-items-center justify-content-around">
         <div class="sign-box" id="box1">
-          <span class="placeholder">Upload Your Original Signature</span>
-          <input type="file" id="file1" name="file1" class="form-control" required onchange="previewImage(event, 'preview1')">
+          <span class="placeholder">Upload Your Signature To Be Tested</span>
+          <input type="file" id="file0" name="file0" class="form-control" required onchange="previewImage(event, 'preview1')">
           <img id="preview1" src="#">
-        </div>
-        <div class="sign-box" id="box2">
-          <span class="placeholder">Upload Your Test Signature</span>
-          <input type="file" id="file2" name="file2" class="form-control" required onchange="previewImage(event, 'preview2')">
-          <img id="preview2" src="#">
         </div>
         <button type="submit" class="btn button rounded-pill ms-lg-3">Verify</button>
       </form>
@@ -63,8 +58,8 @@
       <div class="list-container">
         <ul class="mx-5">
           <li class="list-head">Our Product</li>
-          <li class="list-content"><a href="index.html">Home</a></li>
-          <li class="list-content"><a href="documentation.html">Documentation</a></li>
+          <li class="list-content"><a href="http://127.0.0.1:5000/">Home</a></li>
+          <li class="list-content"><a href="http://127.0.0.1:5000/documentation">Documentation</a></li>
           <li class="list-content"><a href="">Research</a></li>
         </ul>
         <ul class="mx-5">
@@ -101,14 +96,7 @@
           }
           reader.readAsDataURL(file);
       }
-
-      document.querySelectorAll('.sign-box').forEach(box => {
-          box.addEventListener('click', function() {
-              const fileInput = this.querySelector('input[type="file"]');
-              fileInput.click();
-          });
-      });
     </script>
-    <script src="/static/scripts/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
